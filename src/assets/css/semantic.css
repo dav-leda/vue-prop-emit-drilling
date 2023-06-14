@@ -2,12 +2,13 @@
 /* MAIN */
 
 main {
-  margin: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   border: 1px solid;
   border-radius: 0.3rem;
   min-height: 95vh;
   text-align: center;
+  max-width: 30rem;
+  margin: 1rem auto;
 }
 
 section {

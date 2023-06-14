@@ -4,16 +4,13 @@
     
     <h1 class="title">App.vue</h1>
 
-    <p class="mt-1">emits desde Componente 2:</p>
-    <br>
-    <p class="mb-1">{{ someData }}</p>
-    <p>{{ data2 }}</p>
-    <p>{{ data3 }}</p>
+    <p class="mt-1 bold">Cadena de emits desde Componente 3:</p>
+
+    <p>{{ dataRecibida }}</p>
 
     <ComponenteUno
+      :una-prop="dataEnviada" 
       @emitir-data="recibirData"
-      @emitir-data-2="recibirData2"
-      @emitir-3="recibirData3"
     />
 
   </main>
@@ -32,26 +29,13 @@ export default defineComponent({
   },
 
   data: () => ({ 
-    someData: '',
-    data2: '',
-    data3: ''
+    dataEnviada: 'Data enviada desde App.vue',
+    dataRecibida: ''
   }),
 
-  computed: {
-    someComputed() {
-      return this.someData
-    }
-  },
-
   methods: {
-    recibirData(value) {
-      this.someData = value
-    },
-    recibirData2(value) {
-      this.data2 = value
-    },
-    recibirData3(value) {
-      this.data3 = value
+    recibirData(value: string) {
+      this.dataRecibida = value
     }
   }
 })
@@ -59,6 +43,6 @@ export default defineComponent({
 </script>
 
 
-<style scoped>
+<style>
 
 </style>

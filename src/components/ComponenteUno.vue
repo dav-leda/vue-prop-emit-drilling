@@ -4,7 +4,10 @@
 
     <h2>Componente 1</h2>
 
-    <ComponenteDos @emitir-3="recibirEmitir"/>
+    <ComponenteDos
+      :una-prop="unaProp" 
+      @emitir-data="reEmitirData"
+    />
 
   </main>
   
@@ -21,18 +24,15 @@ export default defineComponent({
     ComponenteDos 
   },
 
-  //emits: ['emitir-data', 'emitir-data-2'],
+  emits: ['emitir-data'],
 
   props: {
-    someProp: String
+    unaProp: String
   },
-  data: () => ({
-    someData: ""
-  }),
 
   methods: {
-    recibirEmitir(value) {
-      this.$emit('emitir-3', value)
+    reEmitirData(value: string) {
+      this.$emit('emitir-data', value)
     }
   },
 })

@@ -6,9 +6,12 @@
 
     <button
       class="btn-primary mt-1" 
-      @click="$emit('emitir-3', someData)"
-    >emitir data</button>
+      @click="$emit('emitir-data', someData)"
+    >Emitir Data</button>
 
+    <p class="mt-1 bold">Cadena de props desde App.vue:</p>
+    <p>{{ unaProp }}</p>
+    
   </main>
 
 </template>
@@ -18,22 +21,14 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
 
-  components: {
-  },
+  emits: ['emitir-data'],
 
   props: {
-    someProp: String
+    unaProp: String
   },
 
   data: () => ({ 
-    someData: 'data desde Componente 3'
-  }),
-
-  methods: {
-  }
+    someData: 'Data emitida desde Componente 3'
+  })
 })
 </script>
-
-<style scoped>
-
-</style>
