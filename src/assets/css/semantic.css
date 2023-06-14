@@ -1,0 +1,147 @@
+
+/* MAIN */
+
+main {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  min-height: 95vh;
+  text-align: center;
+}
+
+section {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+
+/* BUTTON */ 
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  opacity: 0.8;
+  color: snow;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+pre {
+  font-size: 0.8rem;
+}
+
+
+/* TABLE */
+
+table {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 30rem;
+  border-collapse: collapse;
+}
+
+table tbody tr:nth-child(odd) {
+  opacity: 0.85;
+}
+
+th {
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+  background-color: rgb(37, 37, 37);
+  color: snow;
+}
+
+th, td {  
+  text-align: left;
+  padding: 0.6rem;
+}
+
+tr > td {
+  background-color: darkslategrey;
+  color: snow;
+}
+
+tfoot td {
+  border-top: 2px solid #ddd;
+  font-weight: bold;
+}
+
+
+/* CARD: ARTICLE */
+
+article {
+  position: relative;
+  margin: 1.5rem 1rem;
+  width: 14rem;
+  height: 26rem;
+  border-radius: 1rem;
+  background-color: #eee;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  text-align: left;
+  transition: all 0.3s;
+}
+
+article > img {
+  border-radius: 1rem 1rem 0 0;
+  height: 16rem;
+  width: 14rem;
+  object-fit: cover;
+  /* Al comienzo opacity debe ser 0
+  Luego, cuando se activa v-lazy pasa a ser 1 */
+  /* opacity: 1;
+  transition: all 1s ease; */
+
+  animation: fadein 1s ease-in;
+}
+
+@keyframes fadein {
+  from { opacity: 0}
+  to   { opacity: 1}
+}
+
+
+.loaded {
+  visibility: visible;
+  opacity: 1;
+}
+
+article:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: #fee;
+}
+
+article > header {
+  margin: 1rem;
+}
+
+article > header > h4 {
+  font-weight: bold;
+  margin: 0;
+}
+
+article > header > p {
+  font-size: 1rem;
+}
+
+article > footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SOLO SI ES TEXTO, NO SI ES SVG*/ 
+article > footer > button {
+  position: absolute;
+  top: 1rem;
+  /* right: 1rem; */
+}
+
